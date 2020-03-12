@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+    frontend:
+        container_name: frontend-container
+        build: ./containers/frontend
+        depends_on:
+            - api
+        ports:
+            - "3000:3000"
+        volumes:
+            - "./containers/frontend:/frontend"
+            - nodemodules:/frontend/node_modules
+        tty: true
+    api:
+        container_name: api-container
+        build: ./containers/api
+        ports:
+            - "5000:5000"
+        volumes:
+            - "./containers/api:/go/api"
+        tty: true
+
+volumes:
+    nodemodules:
+        driver: "local"
