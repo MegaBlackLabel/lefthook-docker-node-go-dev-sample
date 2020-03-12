@@ -1,0 +1,1 @@
+# lefthook-docker-node-go-dev-sample
