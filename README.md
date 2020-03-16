@@ -7,6 +7,13 @@
 - visual studio code 1.42.1
 - install lefthook
 
+## install lefthook for git hooks
+```
+.\lefthook.exe install
+linux
+lefthook install
+```
+
 ## create folder
 ```
 mkdir containers/frontend/node_modules
