@@ -5,6 +5,7 @@
 - Docker Desktop 2.2.0.3
 - docker-compose
 - visual studio code 1.42.1
+- install lefthook
 
 ## create folder
 ```
@@ -19,10 +20,14 @@ docker-compose build
 ```
 docker-compose up -d
 ```
-## start react
+
+## test lefthook
 ```
 # attach shell
-yarn start
+windows
+.\lefthook.exe run pre-commit
+linux
+lefthook run pre-commit
 ```
 
 ## docker stop
