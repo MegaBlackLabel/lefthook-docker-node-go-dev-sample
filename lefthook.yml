@@ -36,10 +36,17 @@
 pre-commit:
     piped: true
     commands:
-        docker-compose:
+        1_docker-compose:
             root: .
             run: docker-compose up -d
-        eslint:
+        2_eslint:
             root: "containers/frontend/"
             glob: "*.{js,jsx,ts}"
             run: docker exec -it frontend-container yarn eslint-check
+        3_frontend-test:
+            root: "containers/frontend/"
+            glob: "*.{js,jsx,ts}"
+            run: docker exec -it frontend-container yarn test
+        4_api-test:
+            root: "containers/api/"
+            run: docker exec -it api-container go test
